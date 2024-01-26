@@ -14,21 +14,30 @@ Traveling is fun, but it can turn upside down if you lack proper planning, poten
 
 # Key Functionalities
 
-	• Users are able to search for events based on Location, Year, Month & Date.
- 	• Users can check the events for a given period (Optional)
-	• Users can check the forecast for the present day based on their location.
-	• Users can find the current currency rate for the day based on location.
-	• Users can use the Holiday App on mobile, tablet, laptop, and PC.
+• Users are able to search for events based on Location, Year, Month & Date.
 
-# Challenges
+• Users can check the events for a given period (Optional)
 
-	• Limitation is a key challenge of the build as it states the Free Plan allows only 1 request per second, making multiple API calls during a single request.
+• Users can check the forecast for the present day based on their location.
 
-	• To enhance the functionality of this HA, we plan to widen the scope so that a user can make a request for a given date range. However, there is a drawback from the Free plan, as an API request can only be made for a certain day and not for a range of periods.
+• Users can find the current currency rate for the day based on location.
 
-	• This build is aimed at interacting with different third-party APIs; therefore, unknown errors might arise.
+• Users can use the Holiday App on mobile, tablet, laptop, and PC.
 
-  • As this application does not hold any database, we plan to store temporary data in a JSON file.
+# Potential Challenges
+
+• Limitation is a key challenge of the build as it states the Free Plan allows only 1 request per second, making multiple API calls during a single request.
+
+• To enhance the functionality of this HA, we plan to widen the scope so that a user can make a request for a given date range. However, there is a drawback from the Free plan, as an API request can only be made for a certain day and not for a range of periods.
+
+• This build is aimed at interacting with different third-party APIs; therefore, unknown errors might arise.
+
+• As this application does not hold any database, we plan to store temporary data in a JSON file.
+
+# Flowchart
+
+# Wireframe
+
 
 
 
