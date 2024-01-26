@@ -37,7 +37,24 @@ Traveling is fun, but it can turn upside down if you lack proper planning, poten
 # Flowchart
 
 # Wireframe
+The wireframe prototype showcases how the result will be at the end of the Holiday App development.
 
+# --- # Welcome Page
+![image](https://github.com/DeneshA/my_holiday_app_project_week_1/assets/34461872/3ee7e7af-88db-4547-b06b-73e0ce3fcc1a)
 
+# --- # Home Page (Dashboard)
+![image](https://github.com/DeneshA/my_holiday_app_project_week_1/assets/34461872/ec6e799e-e1d8-43d9-a907-c6e8f9763cc7)
 
+# Technologies
+# ----# Forn-end 
+      ----# HTML , CSS , JavaScript
+# ----# APIs            
+      ----# Abstract API 
+            ----# Holiday API 
+            ----# Exchange Rates API
+            ----#Time zone API (Future Build optional for currenct build.....)
+            ----#IP Geolocation API (Future Build optional for currenct build.....)
+            ----#Avatars API (Future Build optional for currenct build.....)
+      ----# WeatherAPI
 
+# IDE - Visual Studio Code
