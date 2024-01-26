@@ -34,8 +34,6 @@ Traveling is fun, but it can turn upside down if you lack proper planning, poten
 
 • As this application does not hold any database, we plan to store temporary data in a JSON file.
 
-# Flowchart
-
 # Wireframe
 The wireframe prototype showcases how the result will be at the end of the Holiday App development.
 
@@ -57,4 +55,4 @@ The wireframe prototype showcases how the result will be at the end of the Holid
             ----#Avatars API (Future Build optional for currenct build.....)
       ----# WeatherAPI
 
-# IDE - Visual Studio Code
+# ----# IDE - Visual Studio Code
