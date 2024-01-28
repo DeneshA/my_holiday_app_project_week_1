@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Axios call-->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script defer src="js/search_holiday_script.js"></script>   
+    <script defer src="js/navigation_script.js"></script> 
+    <link rel="stylesheet" type="text/css" href="css/search_holiday_style.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+   <title>Search Holiday</title>
+
+</head>
+<body>
+    <standard-header></standard-header>
+     <div class="main-container">
+        <div class="nav-menu"></div>
+        <div class="sub-container-1">
+         <div class="row1-col1">
+            <h3>Search for Holiday</h3>
+            <form>
+               <input id="inputCountryCode" value="" placeholder="Enter the country code here !">
+               <label id="countryLable" for="Select Country"></label>
+               <select id="dynamicCountryList"></select>
+               <input id="search-button" type="button" value="Search a country">
+            </form>
+
+         </div>
+         <div class="row1-col2"></div>
+        </div>
+        <div></div>
+     </div>
+
+</body>
+</html>

@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+/* References */
+/* https://www.youtube.com/watch?v=AiQqip_pVbA */
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -11,25 +13,6 @@ body{
     background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
     font-size: 16px;
     font-family: "Lato",sans-serif;
-}
-
-.main-container{
-
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-h1{
-   
-    font-weight: 600;
-    font-size: 26px;
-    text-align: center;
-    margin: 30px;
-    padding: 20px;
 }
 
 li,a,p {
@@ -86,21 +69,4 @@ header{
 
 .navigation-links li a:hover {
     color: #0088a9;
-}
-
-@media (max-width:600px) {
-
-    body{
-        font-size: 14px;
-    }
-}
-
-@media (min-width:768px){
-    body{
-        font-size: 18px;
-    }
-
-    nav {
-        flex-direction: column;
-    }
 }
