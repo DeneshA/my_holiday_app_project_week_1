@@ -56,3 +56,13 @@ The wireframe prototype showcases how the result will be at the end of the Holid
       ----# WeatherAPI
 
 # ----# IDE - Visual Studio Code
+
+# References
+      # ---# CSS
+      https://www.geeksforgeeks.org/css-tooltip-fade-in-animation/
+      https://www.geeksforgeeks.org/primer-css-fade-down-animation/
+      https://blog.hubspot.com/website/css-fade-in
+
+      # ---# HTML
+
+      # ---# JavaScript

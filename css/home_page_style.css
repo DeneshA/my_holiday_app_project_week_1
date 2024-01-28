@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100%;
+    margin: 5px;
+    padding: 5px;
+    background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
+    font-size: 16px;
+}
+
+.main-container{
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+li,a {
+    font-family: "Lato",sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10%;
+    border: 2px solid #0088a9;
+    border-radius: 5px;
+    
+}
+
+.logo{
+    cursor: pointer;
+    margin: auto;
+    
+}
+.logo-class{
+    font-display: initial;
+}
+
+.logo-name{
+    font-family: "lato",sans-serif;
+    font-size: 20px;
+    font-weight: 900;
+
+}
+.navigation-links{
+    list-style: none;
+}
+
+.navigation-links li{
+    display: inline;
+    padding: 0 20px;
+}
+
+.navigation-links li a{
+    transition: all 0.5s ease 0s;
+}
+
+.navigation-links li a:hover {
+    color: #0088a9;
+}
+
+@media (max-width:600px) {
+
+    body{
+        font-size: 14px;
+    }
+}
+
+@media (min-width:768px){
+    body{
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,47 @@
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+    height: 100%;
+}
+
+.item1{
+
+    height: 50px;
+    /* background-color: #e0e0e0 */
+    
+}
+
+.item2{
+
+    height: 200px;
+}
+.item3{
+
+    height: 200px;
+}
+
+.fade-in-text {
+    
+    text-align: center;
+    opacity: 0; /* Set initial opacity to 0 */
+    animation: fadeIn 5s ease-in-out forwards; /* Use the fadeIn animation with a duration of 2 seconds */
+}
+
+@keyframes fadeIn {
+    from {
+        bottom: 0;
+        opacity: 0; /* Start with opacity 0 */
+    }
+    to {
+        opacity: 1; /* End with opacity 1 */
+        bottom: -400px;
+    }
+}
