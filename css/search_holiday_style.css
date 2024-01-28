@@ -3,7 +3,7 @@ body{
     margin: 5px;
     padding: 5px;
     background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Lato",sans-serif;
 }
 
@@ -11,3 +11,27 @@ body{
     display: flex;
     justify-content: center;
 }
+
+table{
+    
+    border-spacing: 1px;
+    height: auto;
+    text-align: center;
+}
+
+th,td{
+    padding: 10px 30px  10px 10px;
+}
+th{
+    background-color:cadetblue;
+    color: white;
+    font-weight: 400;
+}
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }
+
+
+  /* https://www.w3schools.com/html/html_table_styling.asp */
+  /* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces */
