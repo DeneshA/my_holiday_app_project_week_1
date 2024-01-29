@@ -13,6 +13,26 @@ body{
     font-family: "Lato",sans-serif;
 }
 
+
+
+.fade-in-text {
+    
+    text-align: center;
+    opacity: 0; 
+    animation: fadeIn 5s ease-in-out forwards; 
+}
+
+@keyframes fadeIn {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        opacity: 1; 
+        bottom: -400px;
+    }
+}
+
 .main-container{
 
     display: flex;
@@ -46,20 +66,20 @@ li{
 }
 
 header{
+
     display: flex;
     justify-content: center;
-    align-items: center;
     padding: 5px 10%;
     border: 2px solid #0088a9;
     border-radius: 5px;
     
 }
 
-.logo{
+/* .logo{
     cursor: pointer;
     margin: auto;
     
-}
+} */
 .logo-class{
     font-display: initial;
 }
@@ -70,6 +90,7 @@ header{
     font-weight: 900;
 
 }
+
 .navigation-links{
     list-style: none;
 }
@@ -88,6 +109,10 @@ header{
     color: #0088a9;
 }
 
+.align-text{
+    text-align: left;
+}
+
 @media (max-width:600px) {
 
     body{
@@ -104,3 +129,6 @@ header{
         flex-direction: column;
     }
 }
+
+/* References
+https://www.w3schools.com/css/css3_mediaqueries_ex.asp */

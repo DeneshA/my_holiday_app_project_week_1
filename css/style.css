@@ -5,12 +5,14 @@ body{
     padding: 0;
     background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
     font-family:  "Lato",sans-serif;
+    font-weight: 550;
 }
 .container{
     display: flex;
     flex-direction: column;
     /* background-color: aquamarine; */
     height: 100%;
+    align-items: center;
 }
 p{
     font-size: 16px;
@@ -21,7 +23,20 @@ p{
     /* background-color: #e0e0e0 */
     
 }
+/* .link{
+    border: 2px dotted rgb(3, 59, 61);
+    border-radius: 5px;
+    background-color: rgb(92, 167, 221);    
+    width: 350px;
+} */
 
+a{
+    text-decoration: none;
+    border: 2px dotted;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(150, 218, 255);
+}
 .item2{
 
     height: 200px;
@@ -34,17 +49,19 @@ p{
 .fade-in-text {
     
     text-align: center;
-    opacity: 0; /* Set initial opacity to 0 */
-    animation: fadeIn 5s ease-in-out forwards; /* Use the fadeIn animation with a duration of 2 seconds */
+    opacity: 0; 
+    animation: fadeIn 5s ease-in-out forwards; 
 }
 
 @keyframes fadeIn {
     from {
         bottom: 0;
-        opacity: 0; /* Start with opacity 0 */
+        opacity: 0;
     }
     to {
-        opacity: 1; /* End with opacity 1 */
+        opacity: 1; 
         bottom: -400px;
     }
 }
+/* References */
+/* https://www.geeksforgeeks.org/how-to-create-fade-in-effect-on-page-load-using-css/ */
