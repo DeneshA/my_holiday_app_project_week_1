@@ -8,7 +8,7 @@
     <script defer src="js/search_holiday_script.js"></script>   
     <script defer src="js/navigation_script.js"></script> 
     <link rel="stylesheet" type="text/css" href="css/search_holiday_style.css">
-    <link rel="stylesheet" type="text/css" href="css/navigation_style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/navigation_style.css"> -->
 
    <title>Search Holiday</title>
 
@@ -16,12 +16,13 @@
 <body>
     <!-- <standard-header></standard-header> -->
    <!-- <iframe src="/week3/my_holiday_app_project_week_1/navigation_menu.html" frameborder="0"></iframe> -->
+   <nav ></nav>
      <div class="main-container">
         <div class="nav-menu"></div>
         <div class="sub-container-1">
          <div class="row1-col1">
             <h3>Search for Public Holidays</h3>
-               
+                  <div class="date-display"></div>
             <form>
                <input id="inputCountryCode" value="" placeholder="Enter the country code here !">
                <label id="countryLable" for="Select Country"></label>
@@ -35,11 +36,27 @@
             </form>
 
          </div>
-         <div class="row1-col2">
-            <div>LIne 1</div>
-            <div>LIne 2</div>
-            <div>LIne 3</div>
-            <div>LIne 4</div>
+         <div id="longweekend-container" class="row1-col2">
+            <h3>Long Weekend(s)</h3>
+            <div id="longweekend-list">
+               
+               <ul dir="ul-long">
+                  <li class="li-long">Days count : </li>
+                  <li class="li-long">End Date :</li>
+                  <li class="li-long">Start Date :</li>
+               </ul>
+               <ul>
+                  <li class="li-long">Days count : </li>
+                  <li class="li-long">End Date :</li>
+                  <li class="li-long">Start Date :</li>
+               </ul>
+          
+            </div>
+            
+            
+            </ul>
+         </div>
+         
          </div>
             
         </div>

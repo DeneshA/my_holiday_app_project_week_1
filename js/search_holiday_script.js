@@ -1,6 +1,18 @@
 let inputCountryCode = document.querySelector('#inputCountryCode')
 let inputYear = document.querySelector('#inputYear')
 let search_button = document.querySelector('#search-button')
+let longWeekend_list = document.querySelector('#longweekend-list')
+let display_long = document.querySelector('#display-long')
+let date_display = document.querySelector('.date-display')
+let search_event = document.querySelector('#search-event')
+
+//Current date
+const currentDate = new Date()
+console.log(currentDate.toUTCString())
+date_display.innerHTML = `<p> Date :: ${currentDate.toDateString()}  (Local) </p>
+                          <p> Time :: ${currentDate.toTimeString()}  (Local) </p>
+                            `
+
 loadCountriesList()
 
 
@@ -11,6 +23,11 @@ dynamicCountryList.addEventListener('change',()=> {
 
 search_button.addEventListener('click',()=> {
     loadCountryProfile()
+    // load_longweekend()
+})
+
+search_event.addEventListener('click',()=> {
+
     load_longweekend()
 })
 
@@ -45,7 +62,23 @@ async function loadCountryProfile(){
 async function load_longweekend(){
 
     let response = await axios.get(`https://date.nager.at/api/v3/LongWeekend/${inputYear.value}/${inputCountryCode.value}`)
-    console.log(response.data)
+    //console.log(response.data)
+    let listofLoogWeekend = [response.data]
+    console.log(listofLoogWeekend)
+    let data_list =''
+    // display_long.innerHTML = `<div><h3>${'Long Weekend'}</h3></div>`
+    listofLoogWeekend[0].map((element)=>{
+    data_list += `<ul dir="ul-long">
+                <li class="li-long">Days Count : ${element.dayCount} </li>
+                <li class="li-long">Start Date : ${element.startDate} </li>
+                <li class="li-long">End Date : ${element.endDate}</li>
+                </ul>
+                `
+    })
+    // console.log(data_list)
+    longWeekend_list.innerHTML = data_list
+        
+
 
 }
 

@@ -2,7 +2,9 @@ body{
     height: 100%;
     margin: 5px;
     padding: 5px;
-    background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
+    /* background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png'); */
+    /* background-color: rgba(166, 213, 241, 0.975); */
+    background-color: rgba(166, 213, 241, 0.975);
     font-size: 14px;
     font-family: "Lato",sans-serif;
 }
@@ -19,47 +21,9 @@ body{
     flex: 1;
     display: flex;
     flex-wrap: wrap;
+    /* font-size: 14px; */
 }
 
-.row1-col1,
-.row1-col2 {
-    flex: 1;
-    flex-direction: row;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    width: 600px ;
-    padding: 10px;
-    margin: 5px;
-        }
-/* .row1-col1,
-.row1-col2,
-.row2-col1,
-.row2-col2 {
-    flex: 1;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    width: 600px ;
-    padding: 10px;
-    margin: 5px;
-        } */
-
-.row1-col1,
-.row1-col2 {
-    
-    flex-basis: 48%; 
-}
-
-
-/* Full width on small screens */
-@media (max-width: 600px) {
-.row1-col1,
-.row1-col2,
-.row2-col1,
-.row2-col2 {
-    flex-basis: 100%; 
-}
-}
-                
 table{
     
     border-spacing: 1px;
@@ -81,5 +45,75 @@ tr:nth-child(even) {
   }
 
 
+  .row1-col1,
+  .row1-col2 {
+      flex: 1;
+      flex-direction: row;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      width: 600px ;
+      max-height: 700px;
+      padding: 10px;
+      margin: 5px;
+          }
+  /* .row1-col1,
+  .row1-col2,
+  .row2-col1,
+  .row2-col2 {
+      flex: 1;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      width: 600px ;
+      padding: 10px;
+      margin: 5px;
+          } */
+  
+  .row1-col1,
+  .row1-col2 {
+      
+      flex-basis: 48%; 
+  }
+  
+  
+  /* Full width on small screens */
+  @media (max-width: 600px) {
+  .row1-col1,
+  .row1-col2,
+  .row2-col1,
+  .row2-col2 {
+      flex-basis: 100%; 
+  }
+  }
+  
+  #longweekend-list{
+
+    /* font-size: 16px; */
+    display: block;
+    /* margin: 0 ; */
+    text-align: left;
+    overflow-y: scroll;
+    scroll-behavior: smooth; 
+    max-height: 400px ;
+   
+     
+  }
+  ul{
+    margin-top: 5px;
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: antiquewhite;
+  }
+  li{
+
+
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    font-size: 12px;
+    padding: 5px;
+    
+
+  }
   /* https://www.w3schools.com/html/html_table_styling.asp */
   /* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */
