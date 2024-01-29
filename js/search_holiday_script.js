@@ -6,6 +6,7 @@ let display_long = document.querySelector('#display-long')
 let date_display = document.querySelector('.date-display')
 let search_event = document.querySelector('#search-event')
 let public_holiday = document.querySelector('.public-holiday')
+let next_public_hiliday = document.querySelector('#next-public-hiliday')
 
 //Current date
 const currentDate = new Date()
@@ -15,6 +16,29 @@ date_display.innerHTML = `<p> Date :: ${currentDate.toDateString()}  (Local) </p
                             `
 
 loadCountriesList()
+
+// Coustomizing Public search
+async function load_Next_Public_Holiday_Customize(){
+
+    let response = await axios.get(`https://date.nager.at/api/v3/NextPublicHolidays/${inputCountryCode.value}`)
+    console.log(response.data)
+    let listofNextPublicHoliday = [response.data]
+    let data_list = ''
+
+    listofNextPublicHoliday[0].map((element) =>{
+        data_list += `
+                    <ul class="next-public"> 
+                        <li> Date : ${element.date}</li>
+                        <li> Local Name : ${element.localName}</li>
+                        <li> Global Name : ${element.name}</li>
+                        <li> Types : ${element.types}</li>                        
+                    </ul>
+                    `
+    })
+    
+    next_public_hiliday.innerHTML = data_list
+
+}
 
 
 // On list change event change country and loaded on the input field   
@@ -30,7 +54,8 @@ search_button.addEventListener('click',()=> {
 search_event.addEventListener('click',()=> {
 
     load_longweekend()
-    load_publicHoliday()
+    // load_publicHoliday()
+    load_Next_Public_Holiday_Customize()
 })
 
 async function loadCountryProfile(){
@@ -65,7 +90,7 @@ async function load_publicHoliday(){
 
 
     let response = await axios.get(`https://date.nager.at/api/v3/PublicHolidays/${inputYear.value}/${inputCountryCode.value}`)
-    console.log(response.data)
+    //console.log(response.data)
     let listofPublicHoliday = response.data
 
     if(response.data.length > 0){
@@ -102,7 +127,7 @@ async function createPublicHolidatTable(table_Header,tableData,getElement){
     }
    dynamic_Table.appendChild(dynamic_TH_Row)
     
-    console.log(`tableData ${tableData}`)
+    //console.log(`tableData ${tableData}`)
    //Create rows with data
    for(let j=0;j<tableData.length;j++){
     //console.log(`Table length : ${tableData.length}`)
@@ -159,9 +184,6 @@ async function load_longweekend(){
     })
     // console.log(data_list)
     longWeekend_list.innerHTML = data_list
-        
-
-
 }
 
 async function createDynamicTable(table_Header,tableData,getElement){

@@ -64,8 +64,8 @@ th{
     scroll-behavior: smooth;
 }
 .row2-col2 {
-    max-height: 300px; /* Set the maximum height for the table container */
-    overflow-y: auto; /* Enable vertical scroll if content overflows */
+    /* max-height: 300px;  */
+    overflow-y: auto; 
 }
 tr:nth-child(even) {
     background-color: #D6EEEE;
@@ -81,18 +81,14 @@ tr:nth-child(even) {
       box-sizing: border-box;
       border: 1px solid #ccc;
       width: 600px ;
-      max-height: 700px;
+      height: 650px;
+      /* max-height: 700px; */
       padding: 10px;
       margin: 5px;
-          }
-   
-  .row1-col1,
-  .row1-col2,
-  .row2-col1,
-  .row2-col2{
-      
-      flex-basis: 48%; 
+      flex-basis: 48%;
   }
+   
+ 
   
   /* Long weekend listing  */
     
@@ -104,7 +100,7 @@ tr:nth-child(even) {
     text-align: left;
     overflow-y: scroll;
     scroll-behavior: smooth; 
-    max-height: 400px ;
+    max-height: 500px ;
    
      
   }
