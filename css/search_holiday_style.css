@@ -24,11 +24,16 @@ body{
     /* font-size: 14px; */
 }
 
+.btn-bg-color{
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+
 /* Table styling */
 
 table{
     
-    border-spacing: 1px;
+    border-spacing: 1px ;
     text-align: center;
     padding: 10px;
     max-width: 595px;
@@ -38,6 +43,7 @@ table{
 th,td{
     padding: 15px 15px  15px 15px;
     position: sticky;
+    /* color: #59bbe4; */
 }
 th{
     background-color:cadetblue;
@@ -58,7 +64,7 @@ th{
 }
 
 .row2-col2 {
-    max-height: 300px; 
+    max-height: 650px; 
     overflow-y: auto; 
 }
 tr:nth-child(even) {
@@ -94,7 +100,7 @@ tr:nth-child(even) {
     text-align: left;
     overflow-y: scroll;
     scroll-behavior: smooth; 
-    max-height: 500px ;
+    max-height: 570px ;
    
      
   }

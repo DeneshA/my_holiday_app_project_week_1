@@ -10,6 +10,7 @@ let next_public_hiliday = document.querySelector('#next-public-hiliday')
 let custom_button= document.querySelector('#custom-button')
 let monthList_dropdown = document.querySelector('#monthList')
 let input_Date = document.querySelector('#inputDate')
+let clear_button =  document.querySelector('#clear-button')
 let monthChoosen =''
 
 //Current date
@@ -19,7 +20,7 @@ date_display.innerHTML = `<p> Date :: ${currentDate.toDateString()}  (Local) </p
                           <p> Time :: ${currentDate.toTimeString()}  (Local) </p>
                             `
 
-loadCountriesList()
+load_Countries_List()
 
 // Coustomizing Public search
 async function load_Next_Public_Holiday_Customize(monthinput,dateinput){
@@ -86,15 +87,32 @@ dynamicCountryList.addEventListener('change',()=> {
     })
 
 search_button.addEventListener('click',()=> {
-    loadCountryProfile()
-    // load_longweekend()
+
+    let dataValue = inputCountryCode.value
+    if(!isNaN(dataValue) || dataValue.length < 2 || dataValue > 2 || dataValue ===''){
+        alert("Invalid Country code [Eg. AU - Australia]")
+        inputCountryCode.value = ''
+    }else{
+    load_Country_Profile()
+    }
 })
 
 search_event.addEventListener('click',()=> {
 
+    let dataValue = inputCountryCode.value
+    let dataValue_2 = inputYear.value
+    if(!isNaN(dataValue) || dataValue.length < 2 || dataValue > 2 || dataValue ===''){
+        alert("Invalid Country code [Eg. AU - Australia]")
+        inputCountryCode.value = ''}
+     if(isNaN(dataValue_2) || dataValue_2 ===''){
+        alert("Invalid Year [Eg. 2024]")
+        inputYear.value = ''
+    // }
+    }else{
     load_longweekend()
     load_publicHoliday()
     load_Next_Public_Holiday_Customize()
+    }
 })
 
 monthList_dropdown.addEventListener('change',()=>{
@@ -102,13 +120,29 @@ monthList_dropdown.addEventListener('change',()=>{
     //console.log(monthChoosen)
 })
 
+//https://www.w3schools.com/js/js_validation.asp
 custom_button.addEventListener('click', ()=>{
-    load_Next_Public_Holiday_Customize(monthChoosen,input_Date.value)
-    console.log(input_Date.value)
+     
+    let inputValue = input_Date.value
+    let inputValue_2  = inputCountryCode.value
 
+    if(isNaN(inputValue) ){
+        alert("Invalid Date entered [Eg. 05 - May]")
+        input_Date.value = ''
+    }else if(inputValue_2 ===''){
+        alert("Please select a country to fetch the records")
+        inputCountryCode.value = ''
+    }else{
+    load_Next_Public_Holiday_Customize(monthChoosen,input_Date.value)
+    // console.log(input_Date.value)
+    }
+})
+clear_button.addEventListener('click',()=>{
+    location.reload()
 })
 
-async function loadCountryProfile(){
+
+async function load_Country_Profile(){
 
     //https://www.youtube.com/watch?v=zUcc4vW-jsI
 
@@ -129,7 +163,7 @@ async function loadCountryProfile(){
         
         let country_borders = document.querySelector('.country-borders')
         // <input id="inputCountryCode" value="" placeholder="Enter the country code here !">
-        createDynamicTable(['Country Name', 'Official Name','Country Code','Region'],borders_list,'.country-profile')
+        create_Dynamic_Table(['Country Name', 'Official Name','Country Code','Region'],borders_list,'.country-profile')
 
        
     } 
@@ -145,12 +179,12 @@ async function load_publicHoliday(){
 
     if(response.data.length > 0){
     // let table_header = ['Date','Local Name','Holiday','Counties','Types']
-    createPublicHolidatTable(['Date','Local Name','Holiday','Counties','Types'],listofPublicHoliday,'.public-holiday')
+    create_Public_Holidat_Table(['Date','Local Name','Holiday','Counties / States / Provinces','Types'],listofPublicHoliday,'.public-holiday')
     }
 }
 
 
-async function createPublicHolidatTable(table_Header,tableData,getElement){
+async function create_Public_Holidat_Table(table_Header,tableData,getElement){
  //Table Header
 
     
@@ -227,18 +261,34 @@ async function load_longweekend(){
     let data_list =''
     // display_long.innerHTML = `<div><h3>${'Long Weekend'}</h3></div>`
     listofLoogWeekend[0].map((element)=>{
-    data_list += `<ul dir="ul-long">
+    if(element.dayCount === 4){
+    data_list += `<ul dir="ul-long" style="background-color: #5ee185">
+                <li class="li-long"  >Days Count : ${element.dayCount} </li>
+                <li class="li-long">Start Date : ${element.startDate} </li>
+                <li class="li-long">End Date : ${element.endDate}</li>
+                </ul>
+                `
+    } else if(element.dayCount === 5) {
+        data_list += `<ul dir="ul-long" style="background-color: #59bbe4">
                 <li class="li-long">Days Count : ${element.dayCount} </li>
                 <li class="li-long">Start Date : ${element.startDate} </li>
                 <li class="li-long">End Date : ${element.endDate}</li>
                 </ul>
                 `
+    } else {
+        data_list += `<ul dir="ul-long">
+                <li class="li-long">Days Count : ${element.dayCount} </li>
+                <li class="li-long">Start Date : ${element.startDate} </li>
+                <li class="li-long">End Date : ${element.endDate}</li>
+                </ul>
+                `
+    }
     })
     // console.log(data_list)
     longWeekend_list.innerHTML = data_list
 }
 
-async function createDynamicTable(table_Header,tableData,getElement){
+async function create_Dynamic_Table(table_Header,tableData,getElement){
     //Table Header
 
     //Create table element
@@ -290,7 +340,7 @@ async function createDynamicTable(table_Header,tableData,getElement){
 
 // Load all the countries with their code on page loading
 
-async function loadCountriesList(){
+async function load_Countries_List(){
     
     let dynamicCountryList = document.querySelector('#dynamicCountryList')
 

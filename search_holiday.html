@@ -27,11 +27,13 @@
                <input id="inputCountryCode" value="" placeholder="Enter the country code here !">
                <label id="countryLable" for="Select Country"></label>
                <select id="dynamicCountryList"></select>
-               <input id="search-button" type="button" value="Search a country"><br>
+               <input id="search-button" class="btn-bg-color" type="button" value="Search a country"><br>
                <input id="inputYear" value="" placeholder="Enter the year here !">
-               <input id="search-event" type="button"  value="search for an event">
+               <input id="search-event" class="btn-bg-color" type="button"  value="search for an event(s)">
+               <input id="clear-button"  class="btn-bg-color" type="button"  value="Clear">
                <div class="country-profile">
                   <div class="country-borders"></div>
+                  
                </div>
             </form>
 
@@ -40,8 +42,8 @@
             <h3>Upcomming Long Weekend(s)</h3>
             <div id="longweekend-list">
                
-               <ul dir="ul-long">
-                  <li class="li-long">Days count : </li>
+               <ul id="ul-long">
+                  <li class="li-long" >Days count : </li>
                   <li class="li-long">End Date : </li>
                   <li class="li-long">Start Date : </li>
                </ul>
@@ -69,7 +71,7 @@
                         <th>Date</th>
                         <th>Local Name</th>
                         <th>Holiday</th> 
-                        <th>Counties</th>
+                        <th>Counties / States / Provinces</th>
                         <th>Type</th>
 
                      </tr>
@@ -97,12 +99,23 @@
                   <option value="11" text="November">November</option>
                   <option value="12" text="December">December</option>
                </select>
-               <input id="custom-button" type="button" value="Search by Date, Month">
+               <input id="custom-button" class="btn-bg-color" type="button" value="Search by Date, Month">
                   
 
             </form>
             <div id="next-public-hiliday">
-               
+               <ul class="next-public"> 
+                  <li> Date : </li>
+                  <li> Local Name : </li>
+                  <li> Global Name : </li>
+                  <li> Types : </li>     
+               </ul>
+               <ul > 
+                  <li> Date : </li>
+                  <li> Local Name : </li>
+                  <li> Global Name : </li>
+                  <li> Types : </li>     
+               </ul>
 
             </div>
          </div>
