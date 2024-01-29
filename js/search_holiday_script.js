@@ -7,6 +7,10 @@ let date_display = document.querySelector('.date-display')
 let search_event = document.querySelector('#search-event')
 let public_holiday = document.querySelector('.public-holiday')
 let next_public_hiliday = document.querySelector('#next-public-hiliday')
+let custom_button= document.querySelector('#custom-button')
+let monthList_dropdown = document.querySelector('#monthList')
+let input_Date = document.querySelector('#inputDate')
+let monthChoosen =''
 
 //Current date
 const currentDate = new Date()
@@ -18,13 +22,13 @@ date_display.innerHTML = `<p> Date :: ${currentDate.toDateString()}  (Local) </p
 loadCountriesList()
 
 // Coustomizing Public search
-async function load_Next_Public_Holiday_Customize(){
+async function load_Next_Public_Holiday_Customize(monthinput,dateinput){
 
     let response = await axios.get(`https://date.nager.at/api/v3/NextPublicHolidays/${inputCountryCode.value}`)
     console.log(response.data)
     let listofNextPublicHoliday = [response.data]
     let data_list = ''
-
+    if(!monthinput){
     listofNextPublicHoliday[0].map((element) =>{
         data_list += `
                     <ul class="next-public"> 
@@ -37,7 +41,42 @@ async function load_Next_Public_Holiday_Customize(){
     })
     
     next_public_hiliday.innerHTML = data_list
+    }
+    else {
+        //let sorted_by_month_NPH =[]
+        let splittheDate =''
+        listofNextPublicHoliday[0].map((element)=>{
+        
+            splittheDate = element.date
+           let arrayofSplitDate = splittheDate.split('-')
+           //console.log(arrayofSplitDate[1])
+            if(arrayofSplitDate[1]===monthinput && dateinput==='')
+            {
+               // console.log('Sucess')
+                data_list += `
+                <ul class="next-public"> 
+                    <li> Date : ${element.date}</li>
+                    <li> Local Name : ${element.localName}</li>
+                    <li> Global Name : ${element.name}</li>
+                    <li> Types : ${element.types}</li>                        
+                </ul>
+                `
+            } else if(arrayofSplitDate[1]===monthinput && arrayofSplitDate[2]===dateinput){
+                console.log('sucess date')
+                data_list += `
+                <ul class="next-public"> 
+                    <li> Date : ${element.date}</li>
+                    <li> Local Name : ${element.localName}</li>
+                    <li> Global Name : ${element.name}</li>
+                    <li> Types : ${element.types}</li>                        
+                </ul>
+                `
+            }
+        })
 
+        next_public_hiliday.innerHTML = data_list
+        data_list=''
+    }
 }
 
 
@@ -56,6 +95,17 @@ search_event.addEventListener('click',()=> {
     load_longweekend()
     // load_publicHoliday()
     load_Next_Public_Holiday_Customize()
+})
+
+monthList_dropdown.addEventListener('change',()=>{
+    monthChoosen = monthList_dropdown.value
+    //console.log(monthChoosen)
+})
+
+custom_button.addEventListener('click', ()=>{
+    load_Next_Public_Holiday_Customize(monthChoosen,input_Date.value)
+    console.log(input_Date.value)
+
 })
 
 async function loadCountryProfile(){
