@@ -5,6 +5,7 @@ let longWeekend_list = document.querySelector('#longweekend-list')
 let display_long = document.querySelector('#display-long')
 let date_display = document.querySelector('.date-display')
 let search_event = document.querySelector('#search-event')
+let public_holiday = document.querySelector('.public-holiday')
 
 //Current date
 const currentDate = new Date()
@@ -29,6 +30,7 @@ search_button.addEventListener('click',()=> {
 search_event.addEventListener('click',()=> {
 
     load_longweekend()
+    load_publicHoliday()
 })
 
 async function loadCountryProfile(){
@@ -56,6 +58,23 @@ async function loadCountryProfile(){
 
        
     } 
+
+}
+
+async function load_publicHoliday(){
+
+
+    let response = await axios.get(`https://date.nager.at/api/v3/PublicHolidays/${inputYear.value}/${inputCountryCode.value}`)
+    // console.log(response)
+    let listofPublicHoliday = [response.data]
+    // public_holiday.innerHTML 
+    let data_list=''
+    listofPublicHoliday.map((element) => {
+        data_list = `
+
+                    `
+    })
+
 
 }
 
@@ -144,7 +163,7 @@ async function loadCountriesList(){
 
     let listOfCodes_n_Countries = [response.data]
 
-    console.log(listOfCodes_n_Countries[0])
+    //console.log(listOfCodes_n_Countries[0])
     
     for(let i=0;i<listOfCodes_n_Countries[0].length;i++ )
     {

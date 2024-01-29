@@ -17,7 +17,7 @@ body{
     flex-direction: column;
 }
 
-.sub-container-1 {
+.sub-container-1 ,.sub-container-2{
     flex: 1;
     display: flex;
     flex-wrap: wrap;
@@ -46,7 +46,9 @@ tr:nth-child(even) {
 
 
   .row1-col1,
-  .row1-col2 {
+  .row1-col2,
+  .row2-col1,
+  .row2-col2 {
       flex: 1;
       flex-direction: row;
       box-sizing: border-box;
@@ -56,20 +58,11 @@ tr:nth-child(even) {
       padding: 10px;
       margin: 5px;
           }
-  /* .row1-col1,
+   
+  .row1-col1,
   .row1-col2,
   .row2-col1,
-  .row2-col2 {
-      flex: 1;
-      box-sizing: border-box;
-      border: 1px solid #ccc;
-      width: 600px ;
-      padding: 10px;
-      margin: 5px;
-          } */
-  
-  .row1-col1,
-  .row1-col2 {
+  .row2-col2{
       
       flex-basis: 48%; 
   }
