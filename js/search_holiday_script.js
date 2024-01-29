@@ -93,7 +93,7 @@ search_button.addEventListener('click',()=> {
 search_event.addEventListener('click',()=> {
 
     load_longweekend()
-    // load_publicHoliday()
+    load_publicHoliday()
     load_Next_Public_Holiday_Customize()
 })
 
@@ -152,14 +152,16 @@ async function load_publicHoliday(){
 
 async function createPublicHolidatTable(table_Header,tableData,getElement){
  //Table Header
-    
-    // const publicHoliday_table= document.querySelector('.publicHoliday-table')
-    // console.log(`existing  ${publicHoliday_table}`)
-    // if(publicHoliday_table){
-    //     publicHoliday_table.innerHTML=''
-    //     return
-    // }
 
+    
+    const publicHoliday_table= document.querySelector('.publicHoliday-table')
+    console.log(`existing  ${publicHoliday_table}`)
+    if(publicHoliday_table){
+        console.log(publicHoliday_table)
+        publicHoliday_table.innerHTML=''
+       
+    }
+  
     //Create table element
     // const dynamic_Table = document.createElement('table')
     const dynamic_Table = document.querySelector('.publicHoliday-table')
