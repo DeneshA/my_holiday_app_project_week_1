@@ -2,9 +2,9 @@ body{
     height: 100%;
     margin: 5px;
     padding: 5px;
-    /* background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png'); */
+    background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
     /* background-color: rgba(166, 213, 241, 0.975); */
-    background-color: rgba(166, 213, 241, 0.975);
+    background-color: rgba(202, 231, 249, 0.975);
     font-size: 14px;
     font-family: "Lato",sans-serif;
 }
@@ -24,22 +24,49 @@ body{
     /* font-size: 14px; */
 }
 
+/* Table styling */
+
 table{
     
     border-spacing: 1px;
-    height: auto;
+    /* height: auto; */
     text-align: center;
+    /* overflow-y: scroll;
+    scroll-behavior: smooth;  */
+    max-height: 300px ;
+    padding: 10px;
+    max-width: 595px;
+    border-collapse: separate;
 }
 
 th,td{
     padding: 10px 30px  10px 10px;
+    position: sticky;
 }
 th{
     background-color:cadetblue;
     color: white;
     font-weight: 400;
 }
+.publicHoliday-table{
 
+    max-height: 300px;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+}
+.publicHoliday-table1{
+    max-height: 300px;
+    /* max-width: 300px; */
+    width: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+}
+.row2-col2 {
+    max-height: 300px; /* Set the maximum height for the table container */
+    overflow-y: auto; /* Enable vertical scroll if content overflows */
+}
 tr:nth-child(even) {
     background-color: #D6EEEE;
   }
@@ -67,17 +94,8 @@ tr:nth-child(even) {
       flex-basis: 48%; 
   }
   
-  
-  /* Full width on small screens */
-  @media (max-width: 600px) {
-  .row1-col1,
-  .row1-col2,
-  .row2-col1,
-  .row2-col2 {
-      flex-basis: 100%; 
-  }
-  }
-  
+  /* Long weekend listing  */
+    
   #longweekend-list{
 
     /* font-size: 16px; */
@@ -107,6 +125,19 @@ tr:nth-child(even) {
     
 
   }
+
+
+  
+  /* Full width on small screens */
+  @media (max-width: 600px) {
+    .row1-col1,
+    .row1-col2,
+    .row2-col1,
+    .row2-col2 {
+        flex-basis: 100%; 
+    }
+    }
+
   /* https://www.w3schools.com/html/html_table_styling.asp */
   /* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces */
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */

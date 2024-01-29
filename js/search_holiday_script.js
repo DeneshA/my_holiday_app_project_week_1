@@ -9,7 +9,7 @@ let public_holiday = document.querySelector('.public-holiday')
 
 //Current date
 const currentDate = new Date()
-console.log(currentDate.toUTCString())
+//console.log(currentDate.toUTCString())
 date_display.innerHTML = `<p> Date :: ${currentDate.toDateString()}  (Local) </p>
                           <p> Time :: ${currentDate.toTimeString()}  (Local) </p>
                             `
@@ -54,7 +54,7 @@ async function loadCountryProfile(){
         
         let country_borders = document.querySelector('.country-borders')
         // <input id="inputCountryCode" value="" placeholder="Enter the country code here !">
-        createDynamicTable(['Country Name','Country Code', 'Official Name','Region'],borders_list,'.country-profile')
+        createDynamicTable(['Country Name', 'Official Name','Country Code','Region'],borders_list,'.country-profile')
 
        
     } 
@@ -65,15 +65,78 @@ async function load_publicHoliday(){
 
 
     let response = await axios.get(`https://date.nager.at/api/v3/PublicHolidays/${inputYear.value}/${inputCountryCode.value}`)
-    // console.log(response)
-    let listofPublicHoliday = [response.data]
-    // public_holiday.innerHTML 
-    let data_list=''
-    listofPublicHoliday.map((element) => {
-        data_list = `
+    console.log(response.data)
+    let listofPublicHoliday = response.data
 
-                    `
-    })
+    if(response.data.length > 0){
+    // let table_header = ['Date','Local Name','Holiday','Counties','Types']
+    createPublicHolidatTable(['Date','Local Name','Holiday','Counties','Types'],listofPublicHoliday,'.public-holiday')
+    }
+}
+
+
+async function createPublicHolidatTable(table_Header,tableData,getElement){
+ //Table Header
+    
+    // const publicHoliday_table= document.querySelector('.publicHoliday-table')
+    // console.log(`existing  ${publicHoliday_table}`)
+    // if(publicHoliday_table){
+    //     publicHoliday_table.innerHTML=''
+    //     return
+    // }
+
+    //Create table element
+    // const dynamic_Table = document.createElement('table')
+    const dynamic_Table = document.querySelector('.publicHoliday-table')
+
+    //Create table row element
+    const dynamic_TH_Row = document.createElement('tr')
+
+    //Adding table header
+    for (let i=0;i<table_Header.length;i++){
+         //Create table header element
+        const dynamic_T_Header = document.createElement('th')
+
+        dynamic_T_Header.textContent = table_Header[i]
+        dynamic_TH_Row.appendChild(dynamic_T_Header)
+    }
+   dynamic_Table.appendChild(dynamic_TH_Row)
+    
+    console.log(`tableData ${tableData}`)
+   //Create rows with data
+   for(let j=0;j<tableData.length;j++){
+    //console.log(`Table length : ${tableData.length}`)
+        const t_row = document.createElement('tr')
+
+            
+            const table_data_1 = document.createElement('td')
+            table_data_1.textContent = tableData[j].date
+            t_row.appendChild(table_data_1) 
+
+            const table_data_2 = document.createElement('td')           
+            table_data_2.textContent = tableData[j].localName
+            t_row.appendChild(table_data_2)
+
+            const table_data_3 = document.createElement('td')
+            table_data_3.textContent = tableData[j].name
+            t_row.appendChild(table_data_3)
+
+            const table_data_4 = document.createElement('td')
+            table_data_4.textContent = tableData[j].counties
+            t_row.appendChild(table_data_4)
+
+            const table_data_5 = document.createElement('td')
+            table_data_5.textContent = tableData[j].types
+            t_row.appendChild(table_data_5)
+
+        dynamic_Table.appendChild(t_row)
+   }
+
+//    dynamic_Table.setAttribute('id','publicholiday-table')
+   dynamic_Table.setAttribute('class','publicholiday-table')
+    document.querySelector(getElement).appendChild(dynamic_Table)
+    
+
 
 
 }
@@ -83,7 +146,7 @@ async function load_longweekend(){
     let response = await axios.get(`https://date.nager.at/api/v3/LongWeekend/${inputYear.value}/${inputCountryCode.value}`)
     //console.log(response.data)
     let listofLoogWeekend = [response.data]
-    console.log(listofLoogWeekend)
+    //console.log(listofLoogWeekend)
     let data_list =''
     // display_long.innerHTML = `<div><h3>${'Long Weekend'}</h3></div>`
     listofLoogWeekend[0].map((element)=>{
