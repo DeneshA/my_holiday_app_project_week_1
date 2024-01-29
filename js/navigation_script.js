@@ -17,3 +17,5 @@ class standardHeader extends HTMLElement {
 
 // 
 customElements.define('standard-header',standardHeader)
+
+// https://css-tricks.com/the-simplest-ways-to-handle-html-includes/

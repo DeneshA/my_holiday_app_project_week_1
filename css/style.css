@@ -4,6 +4,7 @@ body{
     margin: 0;
     padding: 0;
     background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
+    font-family:  "Lato",sans-serif;
 }
 .container{
     display: flex;
@@ -11,7 +12,9 @@ body{
     /* background-color: aquamarine; */
     height: 100%;
 }
-
+p{
+    font-size: 16px;
+}
 .item1{
 
     height: 50px;

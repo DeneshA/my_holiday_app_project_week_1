@@ -8,32 +8,44 @@
     <script defer src="js/search_holiday_script.js"></script>   
     <script defer src="js/navigation_script.js"></script> 
     <link rel="stylesheet" type="text/css" href="css/search_holiday_style.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/navigation_style.css">
 
    <title>Search Holiday</title>
 
 </head>
 <body>
-    <standard-header></standard-header>
+    <!-- <standard-header></standard-header> -->
+   <!-- <iframe src="/week3/my_holiday_app_project_week_1/navigation_menu.html" frameborder="0"></iframe> -->
      <div class="main-container">
         <div class="nav-menu"></div>
         <div class="sub-container-1">
          <div class="row1-col1">
-            <h3>Search for Holiday</h3>
+            <h3>Search for Public Holidays</h3>
+               
             <form>
                <input id="inputCountryCode" value="" placeholder="Enter the country code here !">
                <label id="countryLable" for="Select Country"></label>
                <select id="dynamicCountryList"></select>
-               <input id="search-button" type="button" value="Search a country">
+               <input id="search-button" type="button" value="Search a country"><br>
+               <input id="inputYear" value="" placeholder="Enter the year here !">
+               <input id="search-event" type="button"  value="search for an event">
                <div class="country-profile">
                   <div class="country-borders"></div>
                </div>
             </form>
 
          </div>
-         <div class="row1-col2"></div>
+         <div class="row1-col2">
+            <div>LIne 1</div>
+            <div>LIne 2</div>
+            <div>LIne 3</div>
+            <div>LIne 4</div>
+         </div>
+            
         </div>
-        <div></div>
+        <div class="sub-container-2">
+        
+        </div>
      </div>
 
 </body>

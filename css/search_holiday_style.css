@@ -8,10 +8,58 @@ body{
 }
 
 .main-container{
+   
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
+.sub-container-1 {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row1-col1,
+.row1-col2 {
+    flex: 1;
+    flex-direction: row;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    width: 600px ;
+    padding: 10px;
+    margin: 5px;
+        }
+/* .row1-col1,
+.row1-col2,
+.row2-col1,
+.row2-col2 {
+    flex: 1;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    width: 600px ;
+    padding: 10px;
+    margin: 5px;
+        } */
+
+.row1-col1,
+.row1-col2 {
+    
+    flex-basis: 48%; 
+}
+
+
+/* Full width on small screens */
+@media (max-width: 600px) {
+.row1-col1,
+.row1-col2,
+.row2-col1,
+.row2-col2 {
+    flex-basis: 100%; 
+}
+}
+                
 table{
     
     border-spacing: 1px;

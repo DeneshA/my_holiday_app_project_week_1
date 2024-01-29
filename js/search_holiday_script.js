@@ -1,4 +1,5 @@
 let inputCountryCode = document.querySelector('#inputCountryCode')
+let inputYear = document.querySelector('#inputYear')
 let search_button = document.querySelector('#search-button')
 loadCountriesList()
 
@@ -10,6 +11,7 @@ dynamicCountryList.addEventListener('change',()=> {
 
 search_button.addEventListener('click',()=> {
     loadCountryProfile()
+    load_longweekend()
 })
 
 async function loadCountryProfile(){
@@ -18,13 +20,13 @@ async function loadCountryProfile(){
 
     let response = await axios.get(`https://date.nager.at/api/v3/CountryInfo/${inputCountryCode.value}`)
     // let countryProfile = response.
-    console.log(response.data)
+    //console.log(response.data)
   
     let country_profile = document.querySelector('.country-profile')
     country_profile.innerHTML =    `<p> <span class="font-p" >Name : </span>${response.data.commonName}</p>
                                     <p> <span class="font-p" >Official Name : </span> ${response.data.officialName}</p>
                                     <p> <span class="font-p" >Region : </span> ${response.data.region}</p>
-                                    <p> <span class="font-p" >Borders : </span> All total ${response.data.borders.length} borders are given in below table</p>
+                                    <p> <span class="font-p" >Borders : </span> Total of ${response.data.borders.length} border(s) is/are given in below table</p>
                                     `
     //console.log(response.data.borders.length)
     let borders_list = response.data.borders
@@ -40,7 +42,12 @@ async function loadCountryProfile(){
 
 }
 
+async function load_longweekend(){
 
+    let response = await axios.get(`https://date.nager.at/api/v3/LongWeekend/${inputYear.value}/${inputCountryCode.value}`)
+    console.log(response.data)
+
+}
 
 async function createDynamicTable(table_Header,tableData,getElement){
     //Table Header
@@ -63,73 +70,34 @@ async function createDynamicTable(table_Header,tableData,getElement){
 
    //Create rows with data
    for(let j=0;j<tableData.length;j++){
-    console.log(`Table length : ${tableData.length}`)
+    //console.log(`Table length : ${tableData.length}`)
         const t_row = document.createElement('tr')
 
-        // for(let k=0;k<table_Header.length;k++){
-            //console.log(`Table Header length : ${table_Header.length}`)
+            
             const table_data_1 = document.createElement('td')
             table_data_1.textContent = tableData[j].commonName
-            // console.log(tableData[k].commonName)
             t_row.appendChild(table_data_1) 
 
             const table_data_2 = document.createElement('td')           
             table_data_2.textContent = tableData[j].officialName
-            // console.log(tableData[k].officialName)
             t_row.appendChild(table_data_2)
 
             const table_data_3 = document.createElement('td')
             table_data_3.textContent = tableData[j].countryCode
-            // console.log(tableData[k].countryCode)
             t_row.appendChild(table_data_3)
 
             const table_data_4 = document.createElement('td')
             table_data_4.textContent = tableData[j].region
-            // console.log(tableData[k].region)
             t_row.appendChild(table_data_4)
-        // }
+
         dynamic_Table.appendChild(t_row)
    }
 
 
     document.querySelector(getElement).appendChild(dynamic_Table)
 
-    dynamic_Table.setAttribute('border','2')
+
 }
-
-/* /*
-function displayDataAsTable(apiData) {
-    // Assuming the keys of the first object represent table headers
-    const headers = Object.keys(apiData[0]);
-
-    // Create a table element
-    const table = document.createElement('table');
-
-    // Create a header row
-    const headerRow = document.createElement('tr');
-    headers.forEach(header => {
-        const th = document.createElement('th');
-        th.textContent = header;
-        headerRow.appendChild(th);
-    });
-    table.appendChild(headerRow);
-
-    // Create rows with data
-    apiData.forEach(item => {
-        const row = document.createElement('tr');
-        headers.forEach(header => {
-            const td = document.createElement('td');
-            td.textContent = item[header];
-            row.appendChild(td);
-        });
-        table.appendChild(row);
-    });
-
-    // Append the table to the container
-    document.getElementById('apiDataContainer').appendChild(table);
-// // } */ 
-// }
-
 
 // Load all the countries with their code on page loading
 
@@ -157,3 +125,6 @@ async function loadCountriesList(){
     }
 
 }
+
+
+// https://www.youtube.com/watch?v=m_vL25vzpiE
