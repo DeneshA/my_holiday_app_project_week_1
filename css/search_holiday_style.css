@@ -1,3 +1,8 @@
+*{
+    box-sizing: border-box;
+    /* margin: 5px;
+    padding: 5px; */
+}
 body{
     height: 100%;
     margin: 5px;
@@ -87,7 +92,66 @@ tr:nth-child(even) {
       margin: 5px;
       flex-basis: 48%;
   }
+   /* navigation pannel */
+
    
+header{
+
+    display: flex;
+    justify-content: center;
+    padding: 5px 10%;
+    border: 2px solid #0088a9;
+    border-radius: 5px;
+    
+}
+.nav-li,a{
+    font-family: "Lato",sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+
+.nav-li{
+    margin-left: 45px;
+} */
+
+/* .logo{
+    cursor: pointer;
+    margin: auto;
+    
+} */
+.logo-class{
+    font-display: initial;
+}
+
+.logo-name{
+    font-family: "lato",sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+
+}
+
+.navigation-links{
+    list-style: none;
+    border: none;
+    background-color: transparent;
+}
+
+.navigation-links li{
+    display: inline;
+    padding: 0 20px;
+   
+}
+
+.navigation-links li a{
+    transition: all 0.5s ease 0s;
+}
+
+.navigation-links li a:hover {
+    color: #0088a9;
+}
  
   
   /* Long weekend listing  */

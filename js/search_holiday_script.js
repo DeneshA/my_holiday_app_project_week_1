@@ -24,9 +24,9 @@ load_Countries_List()
 
 // Coustomizing Public search
 async function load_Next_Public_Holiday_Customize(monthinput,dateinput){
-
+    next_public_hiliday.innerHTML=''
     let response = await axios.get(`https://date.nager.at/api/v3/NextPublicHolidays/${inputCountryCode.value}`)
-    console.log(response.data)
+    //console.log(response.data)
     let listofNextPublicHoliday = [response.data]
     let data_list = ''
     if(!monthinput){
@@ -63,7 +63,7 @@ async function load_Next_Public_Holiday_Customize(monthinput,dateinput){
                 </ul>
                 `
             } else if(arrayofSplitDate[1]===monthinput && arrayofSplitDate[2]===dateinput){
-                console.log('sucess date')
+                //console.log('sucess date')
                 data_list += `
                 <ul class="next-public"> 
                     <li> Date : ${element.date}</li>
@@ -126,7 +126,7 @@ custom_button.addEventListener('click', ()=>{
     let inputValue = input_Date.value
     let inputValue_2  = inputCountryCode.value
 
-    if(isNaN(inputValue) ){
+    if(isNaN(inputValue) || inputValue > 31 ){
         alert("Invalid Date entered [Eg. 05 - May]")
         input_Date.value = ''
     }else if(inputValue_2 ===''){
