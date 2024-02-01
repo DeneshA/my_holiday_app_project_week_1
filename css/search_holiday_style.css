@@ -63,6 +63,21 @@ th{
     scroll-behavior: smooth;
 
 }
+/* .country-profile{
+    
+    overflow-y: auto;
+    scroll-behavior: smooth;
+} */
+.country-borders{
+    max-height: 200px;
+    overflow-y: auto;
+    
+}
+/* .border-table{
+    max-height: 300px;
+    overflow-y: auto;
+    
+} */
 .public-holiday{
     max-height: 550px;
     overflow-y: auto;
@@ -134,6 +149,7 @@ header{
 }
 
 .navigation-links{
+    
     list-style: none;
     border: none;
     background-color: transparent;

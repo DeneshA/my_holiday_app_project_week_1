@@ -149,22 +149,21 @@ async function load_fireworks_celebration() {
     let listofNextPublicHoliday =[response.data]
 
     listofNextPublicHoliday[0].map((element)=> {
-           let currecntCountryDate = element.date
-           const formatedCountryDate = new Date(currecntCountryDate)
+        
+           let formatedCountryDate = new Date(element.date)
+
            if(currentDate.getFullYear()===formatedCountryDate.getFullYear() &&
-                currecntCountryDate.getMonth === formatedCountryDate.getMonth && 
-                 currentDate.getDate === formatedCountryDate.getDate
+                currentDate.getMonth() === formatedCountryDate.getMonth() && 
+                 currentDate.getDate() === formatedCountryDate.getDate()
                  )
                  {
-                    // call function()
-                    console.log(`Both dates are same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)
+                    //console.log(`Both dates are same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)
+                    confetti()
 
                  } else {
-                    console.log(`Both dates are NOT same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)
-                    console.log(` Current date : ${currentDate.getFullYear()} - ${currentDate.getMonth}  - ${currentDate.getDate}`)
-                    console.log(` formated Date : ${formatedCountryDate.getFullYear()} - ${formatedCountryDate.getMonth}  - ${formatedCountryDate.getDate}`)
-                    confetti()
+                    //console.log(`Both dates are NOT same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)                    
                  }
+
     })
 
 }
@@ -214,12 +213,12 @@ async function load_publicHoliday(){
 
 async function create_Public_Holidat_Table(table_Header,tableData,getElement){
  //Table Header
-
+try{
     
     const publicHoliday_table= document.querySelector('.publicHoliday-table')
-    console.log(`existing  ${publicHoliday_table}`)
+    //console.log(`existing  ${publicHoliday_table}`)
     if(publicHoliday_table){
-        console.log(publicHoliday_table)
+        //console.log(publicHoliday_table)
         publicHoliday_table.innerHTML=''
        
     }
@@ -275,7 +274,9 @@ async function create_Public_Holidat_Table(table_Header,tableData,getElement){
    dynamic_Table.setAttribute('class','publicholiday-table')
     document.querySelector(getElement).appendChild(dynamic_Table)
     
-
+}catch (error){
+    console.log(` Found an error : ${error}`)
+}
 
 
 }
@@ -318,9 +319,10 @@ async function load_longweekend(){
 
 async function create_Dynamic_Table(table_Header,tableData,getElement){
     //Table Header
-
+try{
     //Create table element
     const dynamic_Table = document.createElement('table')
+    //const dynamic_Table = document.querySelector('.border-table')
 
     //Create table row element
     const dynamic_TH_Row = document.createElement('tr')
@@ -360,9 +362,12 @@ async function create_Dynamic_Table(table_Header,tableData,getElement){
         dynamic_Table.appendChild(t_row)
    }
 
-
+    //dynamic_Table.setAttribute('class','border-table')
     document.querySelector(getElement).appendChild(dynamic_Table)
-
+}
+catch (error){
+    console.log(`Found an error :  ${error}`)
+}
 
 }
 
