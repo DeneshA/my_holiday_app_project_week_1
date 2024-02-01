@@ -3,7 +3,8 @@ body{
     height: 100%;
     margin: 0;
     padding: 0;
-    background-image: url('/week3/my_holiday_app_project_week_1/resources/design_pages/picture_3.png');
+    background-image: url('/resources/design_pages/picture_3.png');
+    background-color: rgba(202, 231, 249, 0.975);
     font-family:  "Lato",sans-serif;
     font-weight: 550;
 }
