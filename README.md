@@ -3,7 +3,7 @@
 # Repository : my_holiday_app_project_week_1
 This is a Holiday App (HA) project for my portfolio, showcasing my JavaScript skills and demonstrating how to handle third-party APIs
 
-# Third-party API's  : Abstract API ,WeatherAPI
+# Third-party API's  : Nager Date API, Abstract API , WeatherAPI
 The Holiday App (HA) is built to interact with Abstract APIs, and Weather API to enable the functionality of our HA. It operates under the 'Free Plan,' as this development serves an educational purpose. However, it has a limitation, allowing either 1 request per second or a total of 1,000 requests. This poses a significant challenge for the project as it continues to grow.
 
 # Sucess API Call : 200 OK 
