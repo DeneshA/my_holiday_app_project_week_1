@@ -51,14 +51,14 @@ async function load_Next_Public_Holiday_Customize(monthinput,dateinput){
             splittheDate = element.date
            let arrayofSplitDate = splittheDate.split('-')
            //console.log(arrayofSplitDate[1])
-            if(arrayofSplitDate[1]===monthinput && dateinput==='')
+            if(arrayofSplitDate[1]===monthinput )
             {
                // console.log('Sucess')
                 data_list += `
                 <ul class="next-public"> 
                     <li> Date : ${element.date}</li>
                     <li> Local Name : ${element.localName}</li>
-                    <li> Global Name : ${element.name}</li>
+                    <li> Global Name : ${element.name} </li>
                     <li> Types : ${element.types}</li>                        
                 </ul>
                 `
@@ -112,6 +112,7 @@ search_event.addEventListener('click',()=> {
     load_longweekend()
     load_publicHoliday()
     load_Next_Public_Holiday_Customize()
+    load_fireworks_celebration()
     }
 })
 
@@ -140,6 +141,33 @@ custom_button.addEventListener('click', ()=>{
 clear_button.addEventListener('click',()=>{
     location.reload()
 })
+
+async function load_fireworks_celebration() {
+
+    let response = await axios.get(`https://date.nager.at/api/v3/NextPublicHolidays/${inputCountryCode.value}`)
+
+    let listofNextPublicHoliday =[response.data]
+
+    listofNextPublicHoliday[0].map((element)=> {
+           let currecntCountryDate = element.date
+           const formatedCountryDate = new Date(currecntCountryDate)
+           if(currentDate.getFullYear()===formatedCountryDate.getFullYear() &&
+                currecntCountryDate.getMonth === formatedCountryDate.getMonth && 
+                 currentDate.getDate === formatedCountryDate.getDate
+                 )
+                 {
+                    // call function()
+                    console.log(`Both dates are same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)
+
+                 } else {
+                    console.log(`Both dates are NOT same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)
+                    console.log(` Current date : ${currentDate.getFullYear()} - ${currentDate.getMonth}  - ${currentDate.getDate}`)
+                    console.log(` formated Date : ${formatedCountryDate.getFullYear()} - ${formatedCountryDate.getMonth}  - ${formatedCountryDate.getDate}`)
+                    confetti()
+                 }
+    })
+
+}
 
 
 async function load_Country_Profile(){
@@ -365,5 +393,21 @@ async function load_Countries_List(){
 
 }
 
-
+// Reference
 // https://www.youtube.com/watch?v=m_vL25vzpiE
+
+
+function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+  
+  confetti({
+    angle: randomInRange(55, 125),
+    spread: randomInRange(50, 70),
+    particleCount: randomInRange(50, 100),
+    origin: { y: 0.6 },
+  });
+
+//   https://www.youtube.com/watch?v=quSR_ZrVz6Y
+// https://confetti.js.org/more.html
+// https://confetti.js.org/more.html
