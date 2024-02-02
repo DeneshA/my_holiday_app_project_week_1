@@ -51,7 +51,7 @@ async function load_Next_Public_Holiday_Customize(monthinput,dateinput){
             splittheDate = element.date
            let arrayofSplitDate = splittheDate.split('-')
            //console.log(arrayofSplitDate[1])
-            if(arrayofSplitDate[1]===monthinput )
+            if(arrayofSplitDate[1]===monthinput && !dateinput)
             {
                // console.log('Sucess')
                 data_list += `

@@ -33,13 +33,10 @@ Traveling is fun, but it can turn upside down if you lack proper planning, poten
 
 # Potential Challenges
 
-• Limitation is a key challenge of the build as it states the Free Plan allows only 1 request per second, making multiple API calls during a single request.
-
 • To enhance the functionality of this HA, we plan to widen the scope so that a user can make a request for a given date range. However, there is a drawback from the Free plan, as an API request can only be made for a certain day and not for a range of periods.
 
 • This build is aimed at interacting with different third-party APIs; therefore, unknown errors might arise.
 
-• As this application does not hold any database, we plan to store temporary data in a JSON file.
 
 # Wireframe
 The wireframe prototype showcases how the result will be at the end of the Holiday App development.

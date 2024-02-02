@@ -84,7 +84,7 @@ th{
 }
 
 .row2-col2 {
-    max-height: 650px; 
+    max-height: 700px; 
     overflow-y: auto; 
 }
 tr:nth-child(even) {
@@ -101,7 +101,7 @@ tr:nth-child(even) {
       box-sizing: border-box;
       border: 1px solid #ccc;
       width: 600px ;
-      height: 650px;
+      height: 700px;
       /* max-height: 700px; */
       padding: 10px;
       margin: 5px;
@@ -203,17 +203,57 @@ header{
   }
 
 
-  
-  /* Full width on small screens */
-  @media (max-width: 600px) {
+  @media (max-width:600px) {
+
+    body{
+        font-size: 16px;
+        padding: 5px;
+        background-image: none;
+    }
+
+    li {
+        
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
+    }
+
     .row1-col1,
     .row1-col2,
     .row2-col1,
     .row2-col2 {
         flex-basis: 100%; 
     }
+
+}
+
+@media (min-width:768px){
+    body{
+        font-size: 14px;
+        background-image: none; 
+        padding: 10px;
     }
 
+    nav {
+        flex-direction: column;
+    }
+   
+}
+
+@media (min-width:1260px){
+    body{
+        font-size: 14px;
+        /* background-image: none; */
+        padding: 10px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+   
+}
+  
   /* https://www.w3schools.com/html/html_table_styling.asp */
   /* https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces */
   /* https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-behavior */

@@ -63,7 +63,9 @@ li,a,p {
 }
 
 li{
-    margin-left: 45px;
+   /* // margin-left: 15px; */
+    margin-right: 5px;
+
 }
 
 header{
@@ -76,13 +78,11 @@ header{
     
 }
 
-/* .logo{
-    cursor: pointer;
-    margin: auto;
-    
-} */
 .logo-class{
+
     font-display: initial;
+    margin-left: 10px;
+    
 }
 
 .logo-name{
@@ -118,17 +118,30 @@ header{
 
     body{
         font-size: 14px;
+        padding: 5px;
+        background-image: none;
+    }
+
+    li {
+        
+        text-align: center;
+    }
+    nav {
+        flex-direction: column;
     }
 }
 
 @media (min-width:768px){
     body{
         font-size: 18px;
+        background-image: none;
+        padding: 10px;
     }
 
     nav {
         flex-direction: column;
     }
+   
 }
 
 /* References
