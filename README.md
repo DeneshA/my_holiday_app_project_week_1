@@ -2,6 +2,8 @@
 ---------------------------------------------------------------------------------------------------------------------------------
 # Repository : my_holiday_app_project_week_1
 This is a Holiday App (HA) project for my portfolio, showcasing my JavaScript skills and demonstrating how to handle third-party APIs
+---# Published :  https://abrasive-polish.surge.sh/
+---# Guthub: https://github.com/DeneshA/my_holiday_app_project_week_1
 
 # Third-party API's  : Nager Date API, Abstract API , WeatherAPI
 The Holiday App (HA) is built to interact with Abstract APIs, Nager Date API, and Weather API to enable the functionality of our HA. It operates under the 'Free Plan,' as this development serves an educational purpose. However, it has a limitation, allowing either 1 request per second or a total of 1,000 requests. This poses a significant challenge for the project as it continues to grow. Nager Date API has a wide range of scope to access additional data and additional endpoints.
