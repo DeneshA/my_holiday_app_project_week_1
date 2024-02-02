@@ -161,7 +161,7 @@ async function load_fireworks_celebration() {
                     confetti()
 
                  } else {
-                    //console.log(`Both dates are NOT same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)                    
+                    console.log(`Both dates are NOT same - Current Date : ${currentDate} Country Date ${formatedCountryDate}`)                    
                  }
 
     })
